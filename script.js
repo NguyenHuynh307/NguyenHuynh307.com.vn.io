@@ -270,3 +270,46 @@ canvas.addEventListener( 'mouseup', function( e ) {
 
 // once the window loads, we are ready for some fireworks!
 window.onload = loop;
+const video = document.getElementById('video');
+const audio = document.getElementById('audio');
+const info = document.getElementById('info');
+const controls = document.getElementById('controls');
+const volumeBar = document.getElementById('volume-bar');
+
+
+// Xử lý sự kiện khi click chuột và di chuyển thanh âm lượng
+let isDraggingVolume = false;
+
+volumeBar.addEventListener('mousedown', () => {
+  isDraggingVolume = true;
+});
+
+volumeBar.addEventListener('mouseup', () => {
+  isDraggingVolume = false;
+});
+
+volumeBar.addEventListener('mousemove', (e) => {
+  if (isDraggingVolume) {
+    const percent = e.offsetX / volumeBar.clientWidth;
+    audio.volume = percent;
+ }
+});   volumeBar.value = percent;
+
+var flag = document.getElementById("flag"); // Lấy phần tử của lá cờ Việt Nam
+flag.addEventListener("click", toggleFlag); // Gán sự kiện click cho phần tử
+
+function toggleFlag() {
+  if (flag.style.display === "none") { // Nếu lá cờ ẩn
+    flag.style.display = "block"; // Hiển thị nó
+  } else { // Ngược lại
+    flag.style.display = "none"; // Ẩn nó đi
+  }
+}
+
+
+
+
+
+
+
+
